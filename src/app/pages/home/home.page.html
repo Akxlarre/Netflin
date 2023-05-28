@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ñexflix
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section>
+    <div class="metraje" *ngFor=" let metraje of peliculas">
+      <ion-img src="https://i.pinimg.com/originals/82/cb/dd/82cbddba77d3d4890e441477414960da.png" ></ion-img>
+      <div class="contenido">
+        <span *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" class="duracion">Duracion {{metraje.duracion_minutos}} min</span>
+        <ng-template #DuracionCapitulo>
+          <span class="duracion">Duracion {{metraje.duracion_capitulos}} minutos por capitulo cap</span>
+        </ng-template>
+      </div>
+      <ion-icon name="heart-outline"></ion-icon>
+    </div>
+  </section>
+</ion-content>
