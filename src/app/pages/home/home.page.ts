@@ -18,11 +18,11 @@ export class HomePage {
   constructor(private _router:Router) {} // <-- inject Router private _router:Router
 
   changePage(nombrePelicula:string) {
-    let data: NavigationExtras = {
+    let data: NavigationExtras = { // <-- navigationExtras hace que se pueda pasar un objeto como parámetro en la navegación entre páginas 
       state: {
         pelicula: nombrePelicula
-      }
+      } // state es un objeto que contiene la información que se quiere pasar a la otra página
     }; 
-    this._router.navigate(['page-pelicula'], data);
+    this._router.navigate(['page-pelicula'], data); // <-- esto es lo que hace que se navegue a la página page-pelicula
   }
 }
