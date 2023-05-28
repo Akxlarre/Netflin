@@ -9,16 +9,19 @@
 <ion-content [fullscreen]="true">
   <section>
     <div class="metraje" *ngFor=" let metraje of peliculas"> <!-- *ngFor=" let metraje of peliculas" es un ciclo for que recorre el arreglo peliculas -->
-      <ion-img (click)="changePage(metraje.titulo)" src="https://i.pinimg.com/originals/82/cb/dd/82cbddba77d3d4890e441477414960da.png" ></ion-img>
+      <ion-img (click)="changePage(metraje.titulo)" src="https://i.pinimg.com/originals/ef/17/c8/ef17c8ccacc3200275ea9069f1015eda.jpg" ></ion-img>
       <!-- (click)="changePage(metraje.titulo)" es un evento que al hacer click en la imagen llama a la funcion changePage y le pasa como parametro el titulo de la pelicula -->
       <div class="contenido">
-        <span *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" class="duracion">Duracion {{metraje.duracion_minutos}} min</span>
-        <!-- *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" es una condicional que dice que si la duracion de la pelicula es mayor a 0 entonces que muestre la duracion de la pelicula en minutos, si no que muestre la duracion de la pelicula en capitulos -->
-        <ng-template #DuracionCapitulo>
-          <span class="duracion">Duracion {{metraje.duracion_capitulos}} minutos por capitulo cap</span>
-        </ng-template>
+        <div class="Informacion">
+          <span *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" class="duracion">Duracion {{metraje.duracion_minutos}} min</span>
+          <!-- *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" es una condicional que dice que si la duracion de la pelicula es mayor a 0 entonces que muestre la duracion de la pelicula en minutos, si no que muestre la duracion de la pelicula en capitulos -->
+          <ng-template #DuracionCapitulo>
+            <span class="duracion">Duracion {{metraje.duracion_capitulos}} minutos por capitulo cap</span>
+          </ng-template>
+          <ion-icon name="heart-outline"></ion-icon>
+        </div>
       </div>
-      <ion-icon name="heart-outline"></ion-icon>
+      
     </div>
   </section>
 </ion-content>

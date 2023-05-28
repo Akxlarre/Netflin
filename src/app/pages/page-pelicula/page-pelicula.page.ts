@@ -17,7 +17,7 @@ export class PagePeliculaPage implements OnInit {
     this._activeRoute.params.subscribe(params => { // Nos suscribimos a los parametros de la url
       if (this._router.getCurrentNavigation()?.extras.state) { // Si la navegacion actual tiene un estado, es decir, si hemos navegado desde el componente de peliculas
         this.data = this._router.getCurrentNavigation()?.extras.state; // Obtenemos el estado de la navegacion actual, es decir, la pelicula que hemos seleccionado 
-        this.pelicula = this.peliculas.filter((pelicula: any) => { // Filtramos el array de peliculas para obtener la pelicula que hemos seleccionado
+        this.pelicula = this.peliculas.filter((pelicula: any) => { // Filtramos el array de peliculas para obtener la pelicula que queremos ver
           return pelicula.titulo == this.data.pelicula})[0]; // El metodo filter devuelve un array, por lo que accedemos a la posicion 0 para obtener la pelicula
       }
     });
@@ -25,3 +25,4 @@ export class PagePeliculaPage implements OnInit {
   ngOnInit() {
   }
 }  
+
