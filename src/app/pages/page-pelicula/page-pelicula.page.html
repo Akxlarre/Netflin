@@ -1,13 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>{{pelicula.titulo}}</ion-title>
+    <div class="barra"> <!-- clase header -->
+      <ion-buttons> 
+        <ion-back-button text="volver"></ion-back-button> <!-- boton de atras -->
+      </ion-buttons>
+      <ion-title>{{pelicula.titulo}}</ion-title> <!-- titulo de la pelicula -->
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">pagePelicula</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <section class="contenedorPoster">
+    <ion-img src="{{pelicula.poster}}" ></ion-img>
+  </section>
+  <section class="contenedorInfo">
+    <div class="info">
+      <span *ngIf="pelicula.duracion_minutos > 0; else DuracionCapitulos">
+        <ion-icon name="time-outline"></ion-icon>
+        {{ pelicula.duracion_minutos }} minuto(s)
+      </span>
+      <ng-template #DuracionCapitulos>
+        <ion-icon name="time-outline"></ion-icon>
+        {{ pelicula.duracion_capitulos }} minuto(s) por Capítulo
+      </ng-template>
+      <span class="clasificacion">{{pelicula.calificacion}}
+        <ion-icon name="star"></ion-icon>
+      </span>
+    </div>
+    <div class="descripcion">
+      <p>{{pelicula.descripcion}}</p>
+    </div>
+    <section *ngIf="pelicula.duracion_capitulos > 0" class="temporadas">
+      <div class="temporada" *ngFor="let temporada of pelicula.temporadas">
+        <span>
+          <ion-icon name="caret-forward-outline"></ion-icon>
+          Temporada {{ temporada.numero }}
+        </span>
+        <span>{{ temporada.cantidad_capitulos }} Capitulo(s)</span>
+      </div>
+    </section>
+  </section>
 </ion-content>

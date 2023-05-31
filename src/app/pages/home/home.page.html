@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <section>
     <div class="metraje" *ngFor=" let metraje of peliculas"> <!-- *ngFor=" let metraje of peliculas" es un ciclo for que recorre el arreglo peliculas -->
-      <ion-img (click)="changePage(metraje.titulo)" src="https://i.pinimg.com/originals/ef/17/c8/ef17c8ccacc3200275ea9069f1015eda.jpg" ></ion-img>
+      <ion-img (click)="changePage(metraje.titulo)" src="{{metraje.poster}}" ></ion-img>
       <!-- (click)="changePage(metraje.titulo)" es un evento que al hacer click en la imagen llama a la funcion changePage y le pasa como parametro el titulo de la pelicula -->
       <div class="contenido">
         <div class="Informacion">

@@ -1,0 +1,17 @@
+.barra{
+    display: flex;
+}
+.contenedorPoster {
+    height: 16rem;
+    ion-img {
+        height: 100%;
+    }
+}
+.contenedorInfo {
+    margin: 1rem;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    border: 1rem;   
+}
