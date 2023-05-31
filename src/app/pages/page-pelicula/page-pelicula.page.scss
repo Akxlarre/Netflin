@@ -1,7 +1,7 @@
 .barra{
-    display: flex;
+    display: flex; 
 }
-.contenedorPoster {
+.contenedorPoster { 
     height: 16rem;
     ion-img {
         height: 100%;
@@ -9,9 +9,23 @@
 }
 .contenedorInfo {
     margin: 1rem;
-}
-.info {
+    
+    .info {
     display: flex;
     justify-content: space-between;
     border: 1rem;   
+    }
+    .descripcion {
+    font-size: 1.5rem;
+    }
+}
+.temporada {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2rem;
+    padding: 1rem 1rem;
+    margin: 0.6rem 0;
+    border: 1px solid lightgray;
+    width: 100%;
 }

@@ -16,7 +16,7 @@
           <span *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" class="duracion">Duracion {{metraje.duracion_minutos}} min</span>
           <!-- *ngIf="metraje.duracion_minutos > 0; else DuracionCapitulo" es una condicional que dice que si la duracion de la pelicula es mayor a 0 entonces que muestre la duracion de la pelicula en minutos, si no que muestre la duracion de la pelicula en capitulos -->
           <ng-template #DuracionCapitulo>
-            <span class="duracion">Duracion {{metraje.duracion_capitulos}} minutos por capitulo cap</span>
+            <span class="duracion">Duracion {{metraje.duracion_capitulos}} minutos por capitulo</span>
           </ng-template>
           <ion-icon name="heart-outline"></ion-icon>
         </div>

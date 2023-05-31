@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <div class="barra"> <!-- clase header -->
+    <div class="barra"> <!-- barra -->
       <ion-buttons> 
         <ion-back-button text="volver"></ion-back-button> <!-- boton de atras -->
       </ion-buttons>
@@ -10,16 +10,16 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <section class="contenedorPoster">
+  <section class="contenedorPoster"> <!-- contenedorPoster -->
     <ion-img src="{{pelicula.poster}}" ></ion-img>
   </section>
   <section class="contenedorInfo">
     <div class="info">
-      <span *ngIf="pelicula.duracion_minutos > 0; else DuracionCapitulos">
+      <span *ngIf="pelicula.duracion_minutos > 0; else DuracionCapitulos"> <!--condicional que dice que si la duracion de la pelicula es mayor a 0 entonces que muestre la duracion de la pelicula en minutos, si no que muestre la duracion de los capitulos -->
         <ion-icon name="time-outline"></ion-icon>
         {{ pelicula.duracion_minutos }} minuto(s)
       </span>
-      <ng-template #DuracionCapitulos>
+      <ng-template #DuracionCapitulos> 
         <ion-icon name="time-outline"></ion-icon>
         {{ pelicula.duracion_capitulos }} minuto(s) por Capítulo
       </ng-template>
@@ -27,10 +27,11 @@
         <ion-icon name="star"></ion-icon>
       </span>
     </div>
+    <ion-icon class="favorito" name="heart-outline"></ion-icon>
     <div class="descripcion">
       <p>{{pelicula.descripcion}}</p>
     </div>
-    <section *ngIf="pelicula.duracion_capitulos > 0" class="temporadas">
+    <section *ngIf="pelicula.duracion_capitulos > 0" class="temporadas"> <!-- condicional que dice que si la duracion de la pelicula es mayor a 0 entonces que muestre las temporadas de la serie -->
       <div class="temporada" *ngFor="let temporada of pelicula.temporadas">
         <span>
           <ion-icon name="caret-forward-outline"></ion-icon>
